@@ -1,0 +1,58 @@
+{
+  "private": false,
+  "name": "postcss-licensing",
+  "version": "1.0.0",
+  "description": "Prepends licensing information to CSS files",
+  "license": "Apache-2.0",
+  "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/castastrophe/postcss-licensing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/castastrophe/postcss-licensing/issues"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "peerDependencies": {
+    "postcss": "^7.0.0 || ^8.0.0"
+  },
+  "devDependencies": {
+    "ava": "^5.2.0",
+    "lint-staged": "^13.2.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "prettier-package-json": "^2.8.0"
+  },
+  "keywords": [
+    "css",
+    "licensing",
+    "plugin",
+    "postcss"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": " https://github.com/sponsors/castastrophe"
+    }
+  ],
+  "engines": {
+    "node": ">=14 <=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier-package-json --write"
+    ]
+  }
+}
