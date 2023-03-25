@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "postcss-licensing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prepends licensing information to CSS files",
   "license": "Apache-2.0",
   "author": "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)",

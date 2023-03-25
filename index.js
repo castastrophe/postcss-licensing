@@ -14,7 +14,7 @@ const { join } = require("path");
  * @returns {import('postcss').Plugin}
  */
 module.exports = (options = { filename, cwd, skipIfEmpty }) => {
-    const {
+    let {
         filename = ["COPYRIGHT", "LICENSE"],
         cwd = process.cwd(),
         skipIfEmpty = true,
