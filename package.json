@@ -35,7 +35,7 @@
     "postcss": "^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.5.1",
+    "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^17.4.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^9.0.2",
