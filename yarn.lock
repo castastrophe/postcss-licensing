@@ -640,10 +640,10 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@^10.0.0", "@semantic-release/github@^10.0.6":
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-10.0.6.tgz#58cdec447a423f5be9a6a4c912cbc422307f695b"
-  integrity sha512-sS4psqZacGTFEN49UQGqwFNG6Jyx2/RX1BhhDGn/2WoPbhAHislohOY05/5r+JoL4gJMWycfH7tEm1eGVutYeg==
+"@semantic-release/github@^10.0.0", "@semantic-release/github@^10.1.3":
+  version "10.1.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-10.1.3.tgz#a26b4fdadc9609858c70452186bedee84897f6f9"
+  integrity sha512-QVw7YT3J4VqyVjOnlRsFA3OCERAJHER4QbSPupbav3ER0fawrs2BAWbQFjsr24OAD4KTTKMZsVzF+GYFWCDtaQ==
   dependencies:
     "@octokit/core" "^6.0.0"
     "@octokit/plugin-paginate-rest" "^11.0.0"
@@ -2183,10 +2183,10 @@ human-signals@^7.0.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-7.0.0.tgz#93e58e0c19cfec1dded4af10cd4969f5ab75f6c8"
   integrity sha512-74kytxOUSvNbjrT9KisAbaTZ/eJwD/LrbM/kh5j0IhPuJzwuA19dWvniFGwBzN9rVjg+O/e+F310PjObDXS+9Q==
 
-husky@^9.0.11:
-  version "9.0.11"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-9.0.11.tgz#fc91df4c756050de41b3e478b2158b87c1e79af9"
-  integrity sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==
+husky@^9.1.4:
+  version "9.1.4"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-9.1.4.tgz#926fd19c18d345add5eab0a42b2b6d9a80259b34"
+  integrity sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==
 
 iconv-lite@^0.6.2:
   version "0.6.3"
@@ -3786,10 +3786,10 @@ prettier-package-json@^2.8.0:
     sort-object-keys "^1.1.3"
     sort-order "^1.0.1"
 
-prettier@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.3.2.tgz#03ff86dc7c835f2d2559ee76876a3914cec4a90a"
-  integrity sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==
+prettier@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.3.3.tgz#30c54fe0be0d8d12e6ae61dbb10109ea00d53105"
+  integrity sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==
 
 pretty-ms@^9.0.0:
   version "9.0.0"
