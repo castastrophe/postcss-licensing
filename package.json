@@ -50,7 +50,7 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "pinst": "^3.0.0",
-    "postcss": "^8.4.42",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-package-json": "^2.8.0",
     "semantic-release": "^24.1.2"
