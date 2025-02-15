@@ -3,10 +3,15 @@ const { join } = require("path");
 
 /**
  * @typedef {object} Options
- * @property {string[]=} filename
- * @property {string=} cwd
- * @property {boolean=} skipIfEmpty
+ * @property {string[]} filename
+ * @property {string} cwd
+ * @property {boolean} skipIfEmpty
  */
+
+const messages = {
+    fileNotFound: (path) =>
+        `File(s) not found at ${path}. Please specify a path with the filename option or create a COPYRIGHT file in the root of the project.`,
+};
 
 /**
  * @type {import('postcss').PluginCreator<Options>}
@@ -21,44 +26,40 @@ module.exports = (options = { filename, cwd, skipIfEmpty }) => {
     } = options;
     return {
         postcssPlugin: "postcss-licensing",
-        OnceExit(css, { Comment }) {
-            // Don't add a license if there are no nodes
+        OnceExit(css, { Comment, result }) {
+            /* Don't add a license if there are no nodes unless opted in via skipIfEmpty = false */
             if (css.nodes.length === 0 && skipIfEmpty) {
                 css.cleanRaws();
                 return;
             }
 
-            function checkForFile(cwd, file) {
-                const path = join(cwd, file);
-                if (!existsSync(path)) return;
-                return path;
-            }
-
             /* Fetch the license from the provided location */
-            let path;
-
             if (typeof filename === "string") {
                 filename = [filename];
             }
 
+            /* Find which file can be found in the order provided */
+            let content;
             filename.forEach((f) => {
-                if (path) return;
-                else path = checkForFile(cwd, f);
+                // If we already found a file, don't look for another
+                if (content) return;
+                else if (existsSync(join(cwd, f))) {
+                    content = readFileSync(join(cwd, f), "utf8")?.trim();
+
+                    // If the file is empty, reset content to undefined
+                    if (!content) content = undefined;
+                }
             });
 
-            if (!existsSync(path)) {
-                return css.error(
-                `File not found at ${path}. Please specify a path with the filename option or create a COPYRIGHT file in the root of the project.`
-                );
-            }
-
-            const content = readFileSync(path, "utf8").trim();
+            /* If none of the provided paths exist, return a warning */
             if (!content) {
-                css.error(
-                `File is empty at ${path}. Please specify a path with the filename option or create a COPYRIGHT file in the root of the project.`
+                return result.warn(
+                    messages.fileNotFound(filename.join(", ")),
+                    { node: css }
                 );
             }
 
+            // Add the license to the top of the file
             const lines = content.split("\n").map((l) => l.trim());
             const text = lines.map((l) => (l ? ` * ${l}` : " *")).join("\n");
             const comment = new Comment({
@@ -67,11 +68,15 @@ module.exports = (options = { filename, cwd, skipIfEmpty }) => {
             });
 
             css.prepend(comment);
+
             if (comment.next()) {
                 comment.next().raws.before = "\n\n";
+            } else {
+                comment.parent.raws.after = "\n";
             }
         },
     };
 };
 
 module.postcss = true;
+module.exports.messages = messages;

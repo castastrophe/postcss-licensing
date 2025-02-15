@@ -1,0 +1,10 @@
+/*!
+ * Copyright 2025. All rights reserved.
+ *
+ * This file is licensed.
+ */
+
+.class-name {
+  --background-color: purple;
+  --border-color: transparent;
+}

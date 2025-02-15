@@ -1,5 +1,4 @@
 {
-  "private": false,
   "name": "postcss-licensing",
   "version": "2.0.0",
   "description": "Prepends licensing information to CSS files",
@@ -20,12 +19,13 @@
     "node": ">=20"
   },
   "scripts": {
-    "postinstall": "husky || true",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable",
-    "test": "ava",
     "coverage": "c8 yarn test",
-    "semantic-release": "semantic-release"
+    "prepack": "pinst --disable",
+    "prepare": "husky",
+    "postinstall": "husky || true",
+    "postpack": "pinst --enable",
+    "semantic-release": "semantic-release",
+    "test": "ava"
   },
   "funding": [
     {
@@ -72,5 +72,6 @@
     "package.json": [
       "prettier-package-json --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.6.0"
 }
