@@ -15,24 +15,15 @@
   "files": [
     "index.js"
   ],
-  "engines": {
-    "node": ">=20"
-  },
   "scripts": {
     "coverage": "c8 yarn test",
-    "prepack": "pinst --disable",
-    "prepare": "husky",
     "postinstall": "husky || true",
+    "prepack": "pinst --disable",
     "postpack": "pinst --enable",
+    "prepare": "husky",
     "semantic-release": "semantic-release",
     "test": "ava"
   },
-  "funding": [
-    {
-      "type": "github",
-      "url": " https://github.com/sponsors/castastrophe"
-    }
-  ],
   "peerDependencies": {
     "postcss": "^7.0.0 || ^8.0.0"
   },
@@ -61,10 +52,19 @@
     "plugin",
     "postcss"
   ],
+  "engines": {
+    "node": ">=22.21.0"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "funding": [
+    {
+      "type": "github",
+      "url": " https://github.com/sponsors/castastrophe"
+    }
+  ],
   "lint-staged": {
     "*.js": [
       "prettier --write"
@@ -73,5 +73,5 @@
       "prettier-package-json --write"
     ]
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.10.3"
 }
